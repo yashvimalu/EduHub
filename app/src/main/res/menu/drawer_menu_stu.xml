@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/profile"
+            android:title="@string/edit_profile" />
+
+        <item android:id="@+id/find_teac"
+            android:title="@string/find_teacher" />
+        <item android:id="@+id/your_teac"
+            android:title="@string/your_teacher" />
+
+        <item android:id="@+id/classes"
+            android:title="@string/your_class" />
+
+    </group>
+
+</menu>

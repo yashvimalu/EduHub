@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "536998981410",
+    "project_id": "gyandaan-25d02",
+    "storage_bucket": "gyandaan-25d02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536998981410:android:aa6858a92a3039aa357f7b",
+        "android_client_info": {
+          "package_name": "com.example.gyaandaan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536998981410-osrif25mqft03e4eac7vgdvjtgr1sspv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbtQYwr39Vv18vnxGPuW71287cp1VQ2gY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536998981410-osrif25mqft03e4eac7vgdvjtgr1sspv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

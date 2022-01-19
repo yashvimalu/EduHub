@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">EduHub</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Drawer open</string>
+    <string name="drawer_close">Drawer close</string>
+    <string name="logo">Logo</string>
+    <string name="google">Google</string>
+    <string name="fb">FB</string>
+    <string name="or_sign_up_using">Or Sign up using</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_id">Email Id</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="update">Update</string>
+    <string name="select_standard">Select Standard</string>
+    <string name="select_subjects">Select Subjects</string>
+    <string name="find">Find</string>
+    <string name="TAG">LALALLALAL</string>
+    <string name="todo">TODO</string>
+    <string name="search">Search</string>
+    <string name="change_password">Change Password</string>
+    <string name="username">Username</string>
+    <string name="type_a_message">Type a message...</string>
+    <string name="hours_available_in_a_week">Hours available in a week</string>
+    <string name="log_in">Log In</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="find_teacher">Find Teacher</string>
+    <string name="your_teacher">Your Teacher</string>
+    <string name="your_class">Your Class</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="your_preferences">Your Preferences</string>
+    <string name="your_students">Your Students</string>
+    <string name="schedule_class">Schedule Class</string>
+    <string name="your_class">Your Class</string>
+    <string name="student_name">Student Name</string>
+    <string name="standard">Standard</string>
+    <string name="board">Board</string>
+    <string name="subject">Subject</string>
+    <string name="time">Time</string>
+    <string name="select_time">Select Time</string>
+    <string name="link">Link</string>
+    <string name="schedule_class">Schedule Class</string>
+    <string name="textview">TextView</string>
+</resources>

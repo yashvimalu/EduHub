@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.gyaandaan">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".ChatTeacher"/>
+        <activity android:name=".StudentClasses" />
+        <activity android:name=".TeacherClasses" />
+        <activity android:name=".TeacherSchedule" />
+        <activity
+            android:name=".Message"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".YourTeachers"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".YourStudents"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".ChatStudent"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".FindTeacher"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".TeacherPreferences"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".EditProfile"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".Teacher_Dashboard"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".Student_Dashboard"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".Signup"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".Forget_Password"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".Welcome"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize|adjustPan" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/profile"
+            android:title="@string/edit_profile" />
+
+        <item android:id="@+id/your_pref"
+            android:title="@string/your_preferences" />
+
+        <item android:id="@+id/your_stu"
+            android:title="@string/your_students" />
+
+        <item android:id="@+id/schedule"
+            android:title="@string/schedule_class" />
+
+        <item android:id="@+id/your_class"
+            android:title="@string/your_class" />
+
+
+
+    </group>
+
+</menu>

@@ -13,12 +13,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class StudentClasses extends AppCompatActivity {
     RecyclerView rv1;
     String user_name,teacher_name,std,subject,link,time,board;
     DatabaseReference reference;
     SClassAdapter sClassAdapter;
-
+    ArrayList<ClassModal> list;
+    ClassModal cm1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,10 @@ public class StudentClasses extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         user_name = extras.getString("student_name");
+        list=new ArrayList<>();
+        sClassAdapter= new SClassAdapter(this,list);
+        rv1.setAdapter(sClassAdapter);
+
 
         reference = FirebaseDatabase.getInstance().getReference().child("Teacher-Student");
 
@@ -38,16 +45,10 @@ public class StudentClasses extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     if(user_name.toLowerCase().equals(dataSnapshot.child("student_name").getValue().toString().toLowerCase())){
-                        teacher_name= dataSnapshot.child("teacher_name").getValue().toString();
-                        std= dataSnapshot.child("standard").getValue().toString();
-                        subject= dataSnapshot.child("subject").getValue().toString();
-                        link= dataSnapshot.child("link").getValue().toString();
-                        time= dataSnapshot.child("time").getValue().toString();
-                        board= dataSnapshot.child("board").getValue().toString();
+                        cm1 = dataSnapshot.getValue(ClassModal.class);
+                        list.add(cm1);
                     }
-                }
-                sClassAdapter= new SClassAdapter(StudentClasses.this,teacher_name,user_name,std,subject,link,time,board);
-                rv1.setAdapter(sClassAdapter);
+                }sClassAdapter.notifyDataSetChanged();
             }
 
             @Override

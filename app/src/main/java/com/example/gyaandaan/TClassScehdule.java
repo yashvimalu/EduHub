@@ -32,7 +32,7 @@ public class TClassScehdule extends RecyclerView.Adapter<TClassScehdule.ViewHold
 
     private Context context;
     ArrayList<Teacher2> list;
-    public String teacher_name,user_name,std,board;
+    public String teacher_name,std,board;
 
     public TClassScehdule(Context context,ArrayList<Teacher2> list,String teacher_name) {
         this.context = context;
@@ -94,7 +94,7 @@ public class TClassScehdule extends RecyclerView.Adapter<TClassScehdule.ViewHold
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         for (DataSnapshot dataSnapshot:snapshot.getChildren())
                         {
-                            if(user_name.toLowerCase().equals(dataSnapshot.child("teacher_name").getValue().toString().toLowerCase()) &&
+                            if(teacher_name.toLowerCase().equals(dataSnapshot.child("teacher_name").getValue().toString().toLowerCase()) &&
                                     t1.getStudent_name().toLowerCase().equals(dataSnapshot.child("student_name").getValue().toString().toLowerCase()) )
                             {
                                 reference.child(dataSnapshot.getKey()).child("link").setValue(link);
@@ -118,16 +118,11 @@ public class TClassScehdule extends RecyclerView.Adapter<TClassScehdule.ViewHold
                 int hourOfDay=2;
                 int minute=2;
                 boolean is24HourView=true;
-
-                //Theme_Holo_Light_Dialog
-                //Theme_Holo_Light_DarkActionBar  //*Top Position
                 _timePickerDialog=new TimePickerDialog(view.getContext(),android.R.style.Theme_Holo_Light_Dialog, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int i, int i1) {
                         //*Return values
                         holder.select_time.setText(i + ":" + i1);
-                        Toast.makeText(view.getContext(), "i=" + i + " i1=" + i1, Toast.LENGTH_SHORT).show();
-
                     }
                 },hourOfDay,minute,is24HourView);
                 _timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

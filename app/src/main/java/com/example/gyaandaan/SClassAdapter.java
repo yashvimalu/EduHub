@@ -9,20 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class SClassAdapter extends RecyclerView.Adapter<SClassAdapter.ViewHolder> {
 
     private Context context;
+    ArrayList<ClassModal> list;
     public String teacher_name, user_name, std, subj, link,time,board;
 
-    public SClassAdapter(Context context, String teacher_name, String user_name, String std, String subject, String link,String time,String board) {
+    public SClassAdapter(Context context,ArrayList<ClassModal>list) {
         this.context = context;
-        this.teacher_name = teacher_name;
-        this.user_name = user_name;
-        this.std = std;
-        this.subj = subject;
-        this.time = time;
-        this.board = board;
-        this.link = link;
+        this.list = list;
     }
 
     @NonNull
@@ -40,12 +37,13 @@ public class SClassAdapter extends RecyclerView.Adapter<SClassAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setIsRecyclable(false);
-        holder.teacher_name.setText(teacher_name);
-        holder.subject.setText(subj);
-        holder.std.setText(std);
-        holder.link.setText(link);
-        holder.time.setText(time);
-        holder.board.setText(board);
+        ClassModal cm1 = list.get(position);
+        holder.teacher_name.setText(cm1.getTeacher_name());
+        holder.subject.setText(cm1.getSubject());
+        holder.std.setText(cm1.getStandard());
+        holder.link.setText(cm1.getLink());
+        holder.time.setText(cm1.getTime());
+        holder.board.setText(cm1.getBoard());
     }
 
     @Override

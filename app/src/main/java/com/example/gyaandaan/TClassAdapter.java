@@ -8,20 +8,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class TClassAdapter extends RecyclerView.Adapter<TClassAdapter.ViewHolder> {
 
     private Context context;
     public String student_name, user_name, std, subj,link,time,board;
+    ArrayList<ClassModal> list;
 
-    public TClassAdapter(Context context, String student_name, String user_name, String std, String subject,String link,String time,String board) {
+
+    public TClassAdapter(Context context, ArrayList<ClassModal>list) {
         this.context = context;
-        this.student_name = student_name;
-        this.user_name = user_name;
-        this.std = std;
-        this.board = board;
-        this.subj = subject;
-        this.link = link;
-        this.time = time;
+        this.list = list;
     }
 
     @NonNull
@@ -39,17 +37,18 @@ public class TClassAdapter extends RecyclerView.Adapter<TClassAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.setIsRecyclable(false);
-        holder.student_name.setText(student_name);
-        holder.subject.setText(subj);
-        holder.std.setText(std);
-        holder.link.setText(link);
-        holder.time.setText(time);
-        holder.board.setText(board);
+        ClassModal cm1 = list.get(position);
+        holder.student_name.setText(cm1.getStudent_name());
+        holder.subject.setText(cm1.getSubject());
+        holder.std.setText(cm1.getStandard());
+        holder.link.setText(cm1.getLink());
+        holder.time.setText(cm1.getTime());
+        holder.board.setText(cm1.getBoard());
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

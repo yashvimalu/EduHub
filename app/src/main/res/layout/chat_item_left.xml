@@ -23,7 +23,7 @@
         android:background="@drawable/bg_download"
         android:text="Hello"
         android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:id="@+id/show_message"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -85,6 +85,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:id="@+id/search"
+                android:textColor="#FFFFFF"
                 android:background="@drawable/bg_download"/>
 
         <androidx.recyclerview.widget.RecyclerView

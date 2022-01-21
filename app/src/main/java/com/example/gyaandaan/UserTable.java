@@ -1,9 +1,9 @@
 package com.example.gyaandaan;
 
 public class UserTable {
-    private String fullname, tablename;
+    public String fullname, tablename;
 
-    private UserTable (String full_name, String tabl_ename){
+    public UserTable (String full_name, String tabl_ename){
         this.fullname = full_name;
         this.tablename = tabl_ename;
 

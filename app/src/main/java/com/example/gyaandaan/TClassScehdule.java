@@ -26,18 +26,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class TClassScehdule extends RecyclerView.Adapter<TClassScehdule.ViewHolder> {
 
     private Context context;
-    public String student_name,user_name,std,subj,board;
+    ArrayList<Teacher2> list;
+    public String teacher_name,user_name,std,board;
 
-    public TClassScehdule(Context context,String student_name, String user_name,String std,String subject, String board) {
+    public TClassScehdule(Context context,ArrayList<Teacher2> list,String teacher_name) {
         this.context = context;
-        this.student_name=student_name;
-        this.user_name = user_name;
-        this.std = std;
-        this.subj = subject;
-        this.board = board;
+        this.teacher_name=teacher_name;
+        this.list=list;
     }
 
     @NonNull
@@ -53,11 +53,14 @@ public class TClassScehdule extends RecyclerView.Adapter<TClassScehdule.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.setIsRecyclable(false);
-        holder.student_name.setText(student_name);
-        holder.subject.setText(subj);
-        holder.std.setText(std);
-        holder.board.setText(board);
+        DatabaseReference reference;
+        reference = FirebaseDatabase.getInstance("https://gyandaan-25d02-default-rtdb.firebaseio.com/").getReference().child("Teacher-Student");
+
+        Teacher2 t1 = list.get(position);
+        holder.student_name.setText(t1.getStudent_name());
+        holder.subject.setText(t1.getSubject());
+        holder.std.setText(t1.getStandard());
+        holder.board.setText(t1.getBoard());
 
         holder.google_meet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +86,7 @@ public class TClassScehdule extends RecyclerView.Adapter<TClassScehdule.ViewHold
             @Override
             public void onClick(View view) {
                 String link = holder.link.getText().toString();
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Teacher-Student");
+
                 String time = holder.select_time.getText().toString();
                 Log.e("TAG", "**link"+link );
                 reference.addValueEventListener(new ValueEventListener() {
@@ -92,7 +95,7 @@ public class TClassScehdule extends RecyclerView.Adapter<TClassScehdule.ViewHold
                         for (DataSnapshot dataSnapshot:snapshot.getChildren())
                         {
                             if(user_name.toLowerCase().equals(dataSnapshot.child("teacher_name").getValue().toString().toLowerCase()) &&
-                                    student_name.toLowerCase().equals(dataSnapshot.child("student_name").getValue().toString().toLowerCase()) )
+                                    t1.getStudent_name().toLowerCase().equals(dataSnapshot.child("student_name").getValue().toString().toLowerCase()) )
                             {
                                 reference.child(dataSnapshot.getKey()).child("link").setValue(link);
                                 reference.child(dataSnapshot.getKey()).child("time").setValue(time);
@@ -137,7 +140,7 @@ public class TClassScehdule extends RecyclerView.Adapter<TClassScehdule.ViewHold
 
     @Override
     public int getItemCount() {
-        return 1;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

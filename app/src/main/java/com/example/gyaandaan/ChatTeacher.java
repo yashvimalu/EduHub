@@ -62,13 +62,13 @@ public class ChatTeacher extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent);
             }
         });
+
         setSupportActionBar(toolbar);
         nav_view.bringToFront();
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
 
         chat_rv = findViewById(R.id.chat_rv);
         chat_rv.setHasFixedSize(true);
@@ -82,6 +82,7 @@ public class ChatTeacher extends AppCompatActivity implements NavigationView.OnN
         mUsers.clear();
 
         usersList=new ArrayList<>();
+
         reference = FirebaseDatabase.getInstance().getReference().child("Chats");
         reference.addValueEventListener(new ValueEventListener() {
             @Override

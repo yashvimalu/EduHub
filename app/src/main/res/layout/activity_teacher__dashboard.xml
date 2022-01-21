@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/bg2"
+                android:textColor="#FFFFFF"
                 android:text="Logout" />
         </RelativeLayout>
 

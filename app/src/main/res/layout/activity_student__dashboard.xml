@@ -35,7 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/bg2"
-                android:text="Logout" />
+                android:text="Logout"
+                android:textColor="#FFFFFF" />
         </RelativeLayout>
 
     </com.google.android.material.navigation.NavigationView>

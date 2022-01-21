@@ -59,13 +59,13 @@ public class ChatStudent extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent);
             }
         });
+
         setSupportActionBar(toolbar);
         nav_view.bringToFront();
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
 
         chat_rv = findViewById(R.id.chat_rv);
         chat_rv.setHasFixedSize(true);
@@ -79,6 +79,7 @@ public class ChatStudent extends AppCompatActivity implements NavigationView.OnN
         mUsers.clear();
 
         usersList=new ArrayList<>();
+
         reference = FirebaseDatabase.getInstance().getReference().child("Chats");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -101,7 +102,6 @@ public class ChatStudent extends AppCompatActivity implements NavigationView.OnN
                 Log.e("TAG", "UserList"+usersList );
                 readChats();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -127,7 +127,8 @@ public class ChatStudent extends AppCompatActivity implements NavigationView.OnN
                             if(mUsers.size()!=0) {
                                 for (ChatModal user1 : mUsers) {
                                     if (user.getReceiver().toLowerCase().equals(user1.getReceiver().toLowerCase())) {
-                                        mUsers.add(user);
+                                        if(!mUsers.contains(user)){
+                                        mUsers.add(user);}
                                     }
                                 }
                             }
@@ -137,7 +138,9 @@ public class ChatStudent extends AppCompatActivity implements NavigationView.OnN
                                 mUsers.add(user);
                             }
                         }
-                    }userChatAdapter=new UserChatAdapter(ChatStudent.this,mUsers,sender);
+                    }
+
+                userChatAdapter=new UserChatAdapter(ChatStudent.this,mUsers,sender);
                 chat_rv.setAdapter(userChatAdapter);
             }
             @Override

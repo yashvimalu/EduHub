@@ -14,47 +14,52 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class TeacherSchedule extends AppCompatActivity {
+import java.util.ArrayList;
 
-    RecyclerView rv1;
-    String user_name,student_name,std,subject,board;
-    DatabaseReference reference;
+public class TeacherSchedule extends AppCompatActivity {
+    RecyclerView r1;
+    String username;
     TClassScehdule tClassScehdule;
+    ArrayList<Teacher2> list;
+    DatabaseReference reference;
+    Teacher2 t1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_schedule);
 
-        rv1 = findViewById(R.id.schedule_rv);
-        rv1.setHasFixedSize(true);
-        rv1.setLayoutManager(new LinearLayoutManager(this));
+        r1 = findViewById(R.id.schedule_rv);
+        r1.setHasFixedSize(true);
+        r1.setLayoutManager(new LinearLayoutManager(this));
 
         Bundle extras = getIntent().getExtras();
-        user_name = extras.getString("user_name");
+        username = extras.getString("user_name");
+        Log.d("TAG", "**Username "+username);
+        list=new ArrayList<>();
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Teacher-Student");
+        tClassScehdule = new TClassScehdule(this,list,username);
+        r1.setAdapter(tClassScehdule);
 
+        reference = FirebaseDatabase.getInstance("https://gyandaan-25d02-default-rtdb.firebaseio.com/").getReference().child("Teacher-Student");
+
+        Log.d("TAG", "Searching fb");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    if(user_name.toLowerCase().equals(dataSnapshot.child("teacher_name").getValue().toString().toLowerCase())){
-                        student_name= dataSnapshot.child("student_name").getValue().toString();
-                        std= dataSnapshot.child("standard").getValue().toString();
-                        subject= dataSnapshot.child("subject").getValue().toString();
-                        board = dataSnapshot.child("board").getValue().toString();
+                for (DataSnapshot dataSnapshot :snapshot.getChildren())
+                {
+                    if(username.equals(dataSnapshot.child("teacher_name").getValue().toString())){
+                        Log.d("TAG", "**Data found");
+                        t1 = dataSnapshot.getValue(Teacher2.class);
+                        list.add(t1);
                     }
-                }
-
-                tClassScehdule= new TClassScehdule(TeacherSchedule.this,student_name,user_name,std,subject,board);
-                rv1.setAdapter(tClassScehdule);
+                }tClassScehdule.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-
     }
 }

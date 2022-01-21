@@ -42,12 +42,12 @@
 
                 <TextView
                     android:id="@+id/username"
+                    android:textColor="#FFFFFF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="12dp"
                     android:textSize="20sp"
-                    android:textColor="#000000"
                     android:text="@string/username" />
             </LinearLayout>
 

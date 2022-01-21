@@ -42,7 +42,7 @@ public class FindTeacher extends AppCompatActivity {
     StringBuilder stringBuilder = new StringBuilder();
     StringBuilder STDstringBuilder = new StringBuilder();
     StringBuilder BoardStringBuilder = new StringBuilder();
-    String subjectTeacher,stdTeacher,username,stdChose,subjChosen,BoardChosen;
+    String subjectTeacher,stdTeacher,username,stdChose,subjChosen,BoardChosen,boardTeacher;
     Teacher t1;
 
     @Override
@@ -280,8 +280,9 @@ public class FindTeacher extends AppCompatActivity {
 
                             subjectTeacher=dataSnapshot.child("subjects").getValue().toString();
                             stdTeacher=dataSnapshot.child("standard").getValue().toString();
+                            boardTeacher=dataSnapshot.child("board").getValue().toString();
 
-                            if(subjectTeacher.contains(subjChosen) && stdTeacher.contains(stdChose)) {
+                            if(subjectTeacher.contains(subjChosen) && stdTeacher.contains(stdChose) && boardTeacher.contains(BoardChosen)) {
                                 t1 = dataSnapshot.getValue(Teacher.class);
                                 list.add(t1);
                             }

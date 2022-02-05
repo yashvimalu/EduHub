@@ -30,6 +30,4 @@ subject choice and standard.
 2. Chat feature for student teacher Interaction.
 
 ## License
-A short snippet describing the license (MIT, Apache etc)
-
 MIT © [Yashvi Malu]()

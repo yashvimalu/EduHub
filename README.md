@@ -1,6 +1,6 @@
 # EduHub
 
-EduHub is an app which will help students find teachers for tutoring. I built this as part if HackerEarth Ctrl Alt Debt by CredAvenue
+EduHub is an app which will help students find teachers for tutoring. I built this app as part of HackerEarth Ctrl Alt Debt by CredAvenue
 
 ## Motivation
 With the pandemic growing around us it is not possible to go to mentors physically to get our doubts solved. 

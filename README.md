@@ -10,11 +10,11 @@ subject choice and standard.
 
 
 ## Screenshots
-![Splash Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(1).jpg =250x250)
-![Login Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(2).jpg=250x250)
-![Student SignUp Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(3).jpg=250x250)
-![Teacher SignUp Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(4).jpg=250x250)
-![Teacher Dashboard Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(5).jpg=250x250)
+![Splash Screen] <img src ="https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(1).jpg"width="400" height="790">
+![Login Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(2).jpg)
+![Student SignUp Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(3).jpg)
+![Teacher SignUp Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(4).jpg)
+![Teacher Dashboard Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(5).jpg)
 
 
 

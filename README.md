@@ -25,6 +25,6 @@ subject choice and standard.
 ## Features
 1. Filter for student to find teacher based on required subject, standard and board.
 2. Chat feature for student teacher Interaction.
-
+3. View your scheduled class.
 ## License
 MIT © [Yashvi Malu]()

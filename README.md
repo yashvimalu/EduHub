@@ -11,14 +11,10 @@ subject choice and standard.
 
 ## Screenshots
 <img src="https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(1).jpg" width="200" height="400" />
-![Splash Screen] (https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(1).jpg)
-![Login Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(2).jpg)
-![Student SignUp Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(3).jpg)
-![Teacher SignUp Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(4).jpg)
-![Teacher Dashboard Screen](https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(5).jpg)
-
-
-
+<img src="https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(2).jpg" width="200" height="400" />
+<img src="https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(3).jpg" width="200" height="400" />
+<img src="https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(4).jpg" width="200" height="400" />
+<img src="https://github.com/yashvimalu/EduHub/blob/master/Screeshot%20%20(5).jpg" width="200" height="400" />
 
 ## Tech/framework used
 
